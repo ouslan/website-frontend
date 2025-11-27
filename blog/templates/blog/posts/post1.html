@@ -1,23 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post 1: Data Analysis</title>
-    <!-- Include any styles or scripts for rendering graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
-    <h1>Data Analysis: Graph of Sales Performance</h1>
-    <p>
-      This post includes a graph of our sales performance over the last year.
-    </p>
-
-    <div>
-      <canvas id="salesChart"></canvas>
-    </div>
-
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Post 1: Data Analysis</title>
+        <!-- Include any styles or scripts for rendering graphs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Data Analysis: Graph of Sales Performance</h1>
+        <p>This post includes a graph of our sales performance over the last year.</p>
+        <div>
+            <canvas id="salesChart"></canvas>
+        </div>
+        <script>
       const ctx = document.getElementById("salesChart").getContext("2d");
       const salesChart = new Chart(ctx, {
         type: "line",
@@ -33,6 +29,6 @@
           ],
         },
       });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>
