@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Welcome to the Blog</h1>
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                <p><strong>Author:</strong> {{ post.author }}</p>
+                <p><strong>Posted on:</strong> {{ post.created_at }}</p>
+                <div class="content">
+                    <p>{{ post.content|truncatewords:30 }}</p> <!-- Truncate content -->
+                    <p><a href="#">Read more</a></p> <!-- Link to detailed post page -->
+                </div>
+                <div class="tags">
+                    <strong>Tags:</strong> 
+                    {% for tag in post.tags %}
+                        <span>{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="image">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                </div>
+            </div>
+        {% empty %}
+            <p>No posts available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
